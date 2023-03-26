@@ -1,0 +1,15 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input, button{
+    font-family: inherit;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(21, 21, 21);
+}
