@@ -19,11 +19,10 @@ const Sidebar = ({ children }) => {
     }
 
     return (
-        <div
-            className='Sidebar'
-            ref={sidebarRef}
-        >
-            {children}</div>
+        <div className='Sidebar' ref={sidebarRef}>
+            {children}
+            <div className='slideBarBg'></div>
+        </div>
     )
 }
 

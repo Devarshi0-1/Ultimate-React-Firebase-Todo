@@ -95,7 +95,7 @@ function Todo({ todo }) {
                     className="text"
                     onClick={() => setSelectedTodo(todo)}
                 >
-                    <p style={{ color: todo.checked ? '#bebebe' : '#000000' }}>{todo.text}</p>
+                    <p style={{ color: todo.checked ? '#bebebe' : 'white' }}>{todo.text}</p>
                     <span>{todo.time} - {todo.projectName}</span>
                     <div className={`line ${todo.checked ? 'line-through' : ''}`}></div>
                 </div>

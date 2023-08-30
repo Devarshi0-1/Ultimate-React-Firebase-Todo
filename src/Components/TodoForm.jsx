@@ -1,8 +1,8 @@
 import { Bell, CalendarDay, Clock, Palette, X } from 'react-bootstrap-icons'
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import { TimePicker } from '@mui/x-date-pickers/TimePicker'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 
 const TodoForm = ({
     handleSubmit,
@@ -19,7 +19,6 @@ const TodoForm = ({
     showButtons = false,
     setShowModal = false,
 }) => {
-
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
             <form onSubmit={handleSubmit} className='TodoForm'>
@@ -42,7 +41,10 @@ const TodoForm = ({
                         <CalendarDay />
                         <p>Choose a Day</p>
                     </div>
-                    <DatePicker value={day} onChange={(day) => setDay(day)} />
+                    <DatePicker
+                        value={day}
+                        onChange={(day) => setDay(day)}
+                    />
                 </div>
                 <div className='pick-time'>
                     <div className='title'>
@@ -51,7 +53,10 @@ const TodoForm = ({
                     </div>
                     <TimePicker
                         value={time}
-                        onChange={(time) => { console.log(time); setTime(time) }}
+                        onChange={(time) => {
+                            console.log(time)
+                            setTime(time)
+                        }}
                     />
                 </div>
                 <div className='pick-project'>
@@ -64,8 +69,9 @@ const TodoForm = ({
                             projects.map((project) => {
                                 return (
                                     <div
-                                        className={`project ${todoProject === project.name ? 'active' : ''
-                                            }`}
+                                        className={`project ${
+                                            todoProject === project.name ? 'active' : ''
+                                        }`}
                                         key={project.id}
                                         onClick={() => setTodoProject(project.name)}>
                                         {project.name}
@@ -73,7 +79,9 @@ const TodoForm = ({
                                 )
                             })
                         ) : (
-                            <div style={{ color: 'red' }}>Please add a project before proceeding</div>
+                            <div style={{ color: 'red' }}>
+                                Please add a project before proceeding
+                            </div>
                         )}
                     </div>
                 </div>

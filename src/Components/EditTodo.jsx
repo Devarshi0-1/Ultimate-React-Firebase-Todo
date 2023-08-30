@@ -43,8 +43,8 @@ const EditTodo = () => {
 
     return (
         <div>
-            {selectedTodo &&
-                <div className='EditTodo'>
+            {selectedTodo && (
+                <div className='EditTodo backdrop-filter'>
                     <div className='header'>Edit Todo</div>
                     <div className='container'>
                         <TodoForm
@@ -60,7 +60,8 @@ const EditTodo = () => {
                             projects={projects}
                         />
                     </div>
-                </div>}
+                </div>
+            )}
         </div>
     )
 }

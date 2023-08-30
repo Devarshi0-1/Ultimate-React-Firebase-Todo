@@ -7,19 +7,14 @@ function Todos() {
     const { todos, selectedProject } = useContext(TodoContext)
 
     return (
-        <div className='Todos'>
-            <div className='selected-project'>
-                {selectedProject}
-            </div>
-            <div className="todos">
-                {
-                    selectedProject === "next 7 days" ?
-                        <Next7Days todos={todos} />
-                        :
-                        todos.map(todo =>
-                            <Todo key={todo.id} todo={todo} />
-                        )
-                }
+        <div className='Todos backdrop-filter'>
+            <div className='selected-project'>{selectedProject}</div>
+            <div className='todos'>
+                {selectedProject === 'next 7 days' ? (
+                    <Next7Days todos={todos} />
+                ) : (
+                    todos.map((todo) => <Todo key={todo.id} todo={todo} />)
+                )}
             </div>
         </div>
     )

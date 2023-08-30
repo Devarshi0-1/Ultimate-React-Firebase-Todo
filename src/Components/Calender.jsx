@@ -5,20 +5,19 @@ import { CalendarDate, CaretUp } from 'react-bootstrap-icons'
 import { useSpring, animated } from 'react-spring'
 
 const Calender = () => {
-
     const [showMenu, setShowMenu] = useState(true)
 
     const { setSelectedProject } = useContext(TodoContext)
 
     const spin = useSpring({
         transform: showMenu ? 'rotate(0deg)' : 'rotate(180deg)',
-        config: { friction: 10 }
+        config: { friction: 10 },
     })
 
     const menuAnimation = useSpring({
         display: showMenu ? 'block' : 'none',
         lineHeight: showMenu ? 1.2 : 0,
-        config: { friction: 10 }
+        config: { friction: 10 },
     })
 
     return (
@@ -35,7 +34,7 @@ const Calender = () => {
                 </animated.div>
             </div>
             <animated.div className='items' style={menuAnimation}>
-                {calendarItems.map((item) => (
+                {calendarItems.map((item, i) => (
                     <div className='item' key={item} onClick={() => setSelectedProject(item)}>
                         {item}
                     </div>
